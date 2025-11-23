@@ -1,0 +1,14 @@
+
+__pycache__/
+*.pyc
+
+
+src/logs/
+*.log
+
+
+.ruff_cache/
+
+
+
+src/.env
