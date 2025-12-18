@@ -40,8 +40,8 @@ async def get_follower_count_playwright(context, username, worker_id, logger):
         
         # Buscar número de seguidores
         selectors = [
-            f'a[href="/{username}/followers/"]',
-            'a[href*="/followers/"]',
+            f'a[href="/{username}/following/"]',
+            'a[href*="/following/"]',
         ]
         
         for selector in selectors:
@@ -68,10 +68,10 @@ async def get_follower_count_playwright(context, username, worker_id, logger):
         # Método alternativo: buscar en todo el texto
         try:
             body_text = await page.inner_text('body')
-            if 'followers' in body_text.lower():
+            if 'following' in body_text.lower():
                 lines = body_text.split('\n')
                 for line in lines:
-                    if 'follower' in line.lower():
+                    if 'following' in line.lower():
                         count = parse_follower_count(line)
                         if count is not None:
                             logger.success(f"  [Worker {worker_id}] ✓ {username}: {count:,} (alt)")

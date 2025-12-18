@@ -34,8 +34,8 @@ load_dotenv()
 # Cargar toda la configuración desde .env
 yourusername = os.getenv("IG_USERNAME")
 yourpassword = os.getenv("IG_PASSWORD")
-account = os.getenv("TARGET_ACCOUNT", "teeli__peachmuffin")  # Cuenta objetivo
-page = os.getenv("PAGE_TYPE", "followers")  # "followers" o "following"
+account = os.getenv("TARGET_ACCOUNT", "nayeli.nxx")  # Cuenta objetivo
+page = os.getenv("PAGE_TYPE", "following")  # "followers" o "following"
 count = int(os.getenv("FOLLOWER_COUNT", "50"))  # Número de seguidores a analizar
 
 # Configuración de paralelización
@@ -49,7 +49,7 @@ if not yourusername or not yourpassword:
     print("IG_USERNAME=tu_usuario")
     print("IG_PASSWORD=tu_contraseña")
     print("TARGET_ACCOUNT=cuenta_objetivo")
-    print("PAGE_TYPE=followers")
+    print("PAGE_TYPE=following")
     print("FOLLOWER_COUNT=50")
     exit(1)
 
@@ -512,8 +512,8 @@ async def get_follower_count_playwright(context, username, worker_id):
         
         # Buscar número de seguidores
         selectors = [
-            f'a[href="/{username}/followers/"]',
-            'a[href*="/followers/"]',
+            f'a[href="/{username}/following/"]',
+            'a[href*="/following/"]',
         ]
         # Para cada selector posible intentar extraer el número
         for selector in selectors:

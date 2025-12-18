@@ -25,7 +25,7 @@ def save_results(account_name, results_dict, logger):
     try:
         with open(logger.csv_file, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
-            writer.writerow(['Username', 'Username_Follower', 'Num_Followers', 'First_Digit'])
+            writer.writerow(['Username', 'Username_Following', 'Num_Followers', 'First_Digit'])
             writer.writerows(results_list)
         logger.success(f"📊 CSV: {logger.csv_file}")
     except Exception as e:

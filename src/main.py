@@ -22,7 +22,7 @@ load_dotenv()
 
 yourusername = os.getenv("IG_USERNAME")
 yourpassword = os.getenv("IG_PASSWORD")
-account = os.getenv("TARGET_ACCOUNT", "teeli__peachmuffin")
+account = os.getenv("TARGET_ACCOUNT", "nayeli.nxx")
 page = os.getenv("PAGE_TYPE", "followers")
 count = int(os.getenv("FOLLOWER_COUNT", "50"))
 
