@@ -12,3 +12,6 @@ src/logs/
 
 
 src/.env
+
+*.csv
+*.xlsx

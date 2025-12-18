@@ -71,7 +71,7 @@ async def get_follower_count_playwright(context, username, worker_id, logger):
             if 'following' in body_text.lower():
                 lines = body_text.split('\n')
                 for line in lines:
-                    if 'following' in line.lower():
+                    if 'follower' in line.lower():
                         count = parse_follower_count(line)
                         if count is not None:
                             logger.success(f"  [Worker {worker_id}] ✓ {username}: {count:,} (alt)")

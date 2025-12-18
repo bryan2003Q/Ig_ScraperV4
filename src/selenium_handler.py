@@ -152,8 +152,8 @@ def scroll_modal_smart(driver, logger):
 def extract_followers_list_selenium(driver, account_name, page_type, target_count, logger):
     """Extrae lista de seguidores con Selenium y autoscroll mejorado"""
     try:
-        logger.log(f"📋 Extrayendo lista de {page_type} de {account_name}...")
-        logger.log(f"🎯 Objetivo: {target_count} usuarios")
+        logger.log(f" Extrayendo lista de {page_type} de {account_name}...")
+        logger.log(f" Objetivo: {target_count} usuarios")
         
         url = f'https://www.instagram.com/{account_name}/'
         driver.get(url)
@@ -161,7 +161,7 @@ def extract_followers_list_selenium(driver, account_name, page_type, target_coun
         
         try:
             driver.find_element(By.XPATH, "//h2[contains(text(), 'Sorry')]")
-            logger.error("❌ Cuenta no existe")
+            logger.error("Cuenta no existe")
             return []
         except NoSuchElementException:
             logger.debug("✓ Cuenta accesible")

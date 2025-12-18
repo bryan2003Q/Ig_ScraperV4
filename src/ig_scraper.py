@@ -121,9 +121,9 @@ def parse_follower_count(text):
     
     # Patrones en orden de especificidad
     patterns = [
-        (r'([\d,\.]+)\s*m\s*followers?', 'M'),  # Millones
-        (r'([\d,\.]+)\s*k\s*followers?', 'K'),  # Miles
-        (r'([\d,\.]+)\s*followers?', None),     # Número exacto
+        (r'([\d,\.]+)\s*m\s*following?', 'M'),  # Millones
+        (r'([\d,\.]+)\s*k\s*following?', 'K'),  # Miles
+        (r'([\d,\.]+)\s*following?', None),     # Número exacto
     ]
     
     for pattern, unit in patterns:
